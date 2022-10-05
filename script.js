@@ -18,7 +18,7 @@ function createPixel(num){
     const div = document.createElement('div');
     //div.textContent = "New Div";
     div.classList.add('pixel');
-    let pixelWidth = Math.floor(396/num);
+    let pixelWidth = Math.floor((400-num)/num);
     let styleWidth = pixelWidth.toString();
     let widthInPixels = styleWidth + "px";
     div.style.width = widthInPixels;
