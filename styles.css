@@ -71,6 +71,8 @@ body {
 .pixel {
     margin: 0px;
     flex-grow: 1;
+    background-color: white;
+    opacity: 1;
     border-top: solid grey 1px;
     border-left: solid grey 1px;
 
