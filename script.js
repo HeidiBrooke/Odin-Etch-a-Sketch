@@ -18,6 +18,7 @@ function createPixels(num){
 function createPixel(num){
     const div = document.createElement('div');
     div.classList.add('pixel');
+    div.addEventListener('mouseover', colorBlack);
     let pixelWidth = Math.floor((400-num)/num);
     let styleWidth = pixelWidth.toString();
     let widthInPixels = styleWidth + "px";
@@ -31,10 +32,15 @@ function resetGrid(){
     let divs = document.querySelectorAll('.pixel');
     divs.forEach(div => {
         div.remove();
-    })
+    });
 }
 
 function createGridNoPromt(num){
     createPixels(num);
 }
+
+function colorBlack(e){
+    e.target.style.backgroundColor = 'black';
+}
+
 createGridNoPromt(16);
