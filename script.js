@@ -45,8 +45,10 @@ function createGridNoPromt(num){
 
 function color(e){
     if (colorMode === 'color'){
-        let randomColor = randomColor();
-        e.target.style.backgroundColor = randomColor;
+        console.log("coloring!")
+        let randomColorHolder = randomColor();
+        console.log(typeof randomColorHolder);
+        e.target.style.backgroundColor = randomColorHolder;
     }
     else if (colorMode === 'sketch'){
         e.target.style.opacity = opacityControl(e);
@@ -62,6 +64,7 @@ function clearColor(){
     let divs = document.querySelectorAll('.pixel');
     divs.forEach(div => {
         div.style.backgroundColor = 'white';
+        div.style.opacity = '1';
     });
 }
 
@@ -88,6 +91,23 @@ function opacityControl(e){
     }
     
     return opacityHolder; 
+}
+
+function colorRandom(){
+    console.log('color mode activated!');
+    colorMode = 'color';
+}
+
+function randomColor(){
+    let rgb = [];
+    for (i = 0; i < 3; i++){
+    rgb[i] = Math.floor(Math.random() * 256);
+    }
+    let r = rgb[0];
+    let g = rgb[1];
+    let b = rgb[2];
+    let randomColorHolder = "rgb(" + r + ", " + g + ", " + b+ ")";
+    return randomColorHolder;
 }
 
 createGridNoPromt(16);
