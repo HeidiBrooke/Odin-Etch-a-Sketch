@@ -43,4 +43,12 @@ function colorBlack(e){
     e.target.style.backgroundColor = 'black';
 }
 
+function clearColor(){
+    console.log("clearing");
+    let divs = document.querySelectorAll('.pixel');
+    divs.forEach(div => {
+        div.style.backgroundColor = 'white';
+    });
+}
+
 createGridNoPromt(16);
